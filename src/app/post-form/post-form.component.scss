@@ -1,0 +1,15 @@
+.post {
+  &-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 500px;
+    margin-top: 50px;
+    width: 500px;
+  }
+}
+
+.btn {
+  background-color: black;
+  color: white;
+}
