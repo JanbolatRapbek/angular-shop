@@ -1,9 +1,15 @@
 <div class="container">
   <app-post-form (onAdd)="updatePosts($event)"></app-post-form>
+  <input type="text" [(ngModel)]="search" />
+
   <hr />
-  <app-post *ngFor="let p of posts" [post]="p" (onRemove)="removePost($event)">
+  <app-post
+    *ngFor="let post of posts | filter : search"
+    [post]="post"
+    (onRemove)="removePost($event)"
+  >
     <div #info>
-      <small *ngIf="p.text.length > 10; else short"> Пост длинный</small
+      <small *ngIf="post.text.length > 10; else short"> Пост длинный</small
       ><ng-template #short><small>Пост короткий</small></ng-template>
       <p appStyle="green" fontWeight="bold">adsasdas</p>
     </div></app-post

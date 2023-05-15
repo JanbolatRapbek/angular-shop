@@ -12,6 +12,7 @@ export interface Post {
 })
 export class AppComponent {
   isVisiable = true;
+  search = '';
   posts: Post[] = [
     {
       title: 'Backend',
